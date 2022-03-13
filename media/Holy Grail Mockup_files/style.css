@@ -1,0 +1,316 @@
+/* remove default spaces */
+* {
+  margin: 0;
+  padding: 0;
+  font-family:Georgia, Cambria, Cochin,  Times, 'Times New Roman', serif;
+}
+
+/* default icon sizes */
+img.big {
+  height: 3rem;
+  width: auto;
+  margin-right: 1rem;
+}
+
+img.med {
+  height: 2rem;
+  width: auto;
+  margin-right: 0.6rem;
+}
+
+img.sml {
+  height: 1rem;
+  width: auto;
+  margin-right: 0.4rem;
+}
+
+
+
+
+
+/* main grid layout */
+.container {
+  text-align:left;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 1fr 6fr;
+  grid-auto-rows: 1fr;
+}
+
+/* SIDEBAR */
+
+
+/* sidebar location in grid  etc */
+.sidebar{
+    grid-column: 1;
+    grid-row: 1 / span 7;
+    background-color: rgb(170, 170, 170);
+    padding: 1rem;
+    /* display: grid;
+    grid-template-rows: 1fr 1fr 1fr; */
+}
+
+/* space between groups in sidebar */
+.head, .nav, .others {
+  margin-bottom: 2rem;
+}
+
+/* dashboard icon override */
+.head .logo {
+    height: 3rem;
+    width: auto;
+    margin-right: 0.7rem;
+}
+
+/* display icon and label in same line and space out */
+.head * {
+  display: inline;
+  vertical-align: middle;
+}
+
+.locations * {
+  display: inline;
+  vertical-align: middle;
+}
+
+div.locations{
+  margin-bottom: 1rem;
+}
+
+
+
+/* indent sidebar items */
+.nav, .others {
+  margin-left: 1rem;
+}
+
+
+/* dashboard font  */
+.head .text {
+    font-size: 2.0rem;
+}
+
+/* sidebar p font */
+.locations p {
+  font-size: 1.5rem;
+}
+
+
+/* MENUBAR */
+
+
+/* menubar grid position and internal grid */
+.menubar {
+  grid-column: 2 / span 5;
+  grid-row: 1;
+  background-color:ghostwhite;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 2fr;
+}
+
+/* display icon and searchbar in same line and space out */
+.search * {
+  display: inline;
+  vertical-align: middle;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+/* smaller search icon */
+.search .logo {
+  height: 1rem;
+  width: auto;
+}
+
+/* bar size is dynamic */
+.bar {
+  width: 40vw;
+  border-radius: 2rem;
+  height: 2rem;
+  background-color: lightgray;
+  border: 0px;
+ 
+}
+
+/* placement of notif to the end */
+.notifications{
+  grid-column: 2;
+  grid-row: 1;
+  justify-self:center;
+}
+
+/*notif icons username in same line */
+.notifications *{
+  display: inline;
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+/* align to lower left */
+.hi{
+  grid-column: 1;
+  grid-row: 2;
+  align-self:flex-end;
+}
+
+/* profile pic and greeting + name in same line, used inline-block to wrap the hi and profile name */
+.hi img, .hi div{
+  display: inline-block;
+  vertical-align: middle;
+  justify-items: left;
+  font-weight: bold;
+}
+
+.hi p.name{
+  font-size: 1.5rem;
+}
+
+/* align create to mid mid */
+.create{
+  grid-column: 2;
+  grid-row: 2;
+  align-self:center;
+  justify-self: center;
+}
+
+/* resize buttons */
+.create button{
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: chocolate;
+  color: white;
+  border-radius: 3rem;
+  border-width: 0px;
+  margin:0px 0.5rem;
+}
+
+
+/* FEED */
+
+/* feed > projects, announcements+trending */
+.feed {
+  grid-column: 2 / span 5;
+  grid-row: 2 / span 6;
+  background-color: grey;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+ /* projects */
+/* label and cards */
+.projects{
+  grid-column: 1 /span 1;
+  grid-row: 1 / span 1;
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: 3rem 1fr;
+}
+
+
+/* label of cards  */
+.projects .label{
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top:1rem;
+  margin-left: 0.5rem;
+}
+
+/* container */
+.projects .cards{
+  grid-column: 1;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 5px;
+  margin: 10px;
+}
+
+.projects .card{
+  min-height: 150px;
+  background-color: aliceblue;
+  
+}
+
+/* card titles */
+ .card .title{
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top:1rem;
+  margin-left: 0.5rem;
+}
+
+/* card descrip */
+.card .description{
+  font-size: 1rem;
+  margin: 0.5rem;
+}
+
+div.actions{
+  display: inline-block;
+  justify-items: right;
+  margin: 0.5rem;
+
+}
+
+/* anntrend */
+
+.anntrend{
+  grid-column: 2;
+  grid-row: 1;
+}
+
+
+/* announcements */
+
+/* label and cards */
+.announcements{
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: 3rem 1fr;
+}
+
+/* label of cards  */
+.announcements .label{
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top:1rem;
+  margin-left: 0.5rem;
+}
+
+/* container */
+.announcements .cards{
+  grid-column: 1;
+  grid-row: 2 /span 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 5px;
+  margin: 10px;
+}
+
+.announcements .card{
+  min-height: 100px;
+  background-color: aliceblue;
+}
+
+
+/* trending */
+
+.trending .label{
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top:1rem;
+  margin-left: 0.5rem;
+}
+
+/* profile pic and user + alias in same line, used inline-block to wrap the hi and profile name */
+.trend img, .trend .name{
+  display: inline-block;
+  vertical-align: middle;
+  justify-items: left;
+  font-size: 1rem;
+/*  */
